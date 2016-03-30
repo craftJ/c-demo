@@ -61,13 +61,13 @@ static int partion(int iStart, int iEnd, int *pdata)
 		keyIdx = iStart;
 		key = pdata[iStart];
 	}
-	printf("===== start: %d   end:%d  key:%d keyIdx:%d\n",iStart,iEnd,key,keyIdx);
+	printf("\n\n===== start: %d   end:%d  key:%d keyIdx:%d\n",iStart,iEnd,key,keyIdx);
 
-	for (i = 0; i<=(iEnd-iStart); i++)
+	for (i = 0; i<=(9); i++)
 	{
-		printf("%d ", pdata[i+iStart]);
+		printf("%d ", pdata[i]);
 	}
-	printf("\n====================================\n");
+	printf("\n");
 	
 	j--;
 	k++;
@@ -75,15 +75,17 @@ static int partion(int iStart, int iEnd, int *pdata)
 	//printf("===== key:%d\n",key);	
 	while (j < k)
 	{
-		do
-		{
-			j++;
-		}while (pdata[j] < key && j < k);
-
+		/*这里的顺序很重要，如果是递归先排列左半边的话，这里必须要先右边哨兵开始*/
 		do
 		{
 			k--;
 		}while (pdata[k] > key && k > j);
+
+
+		do
+		{
+			j++;
+		}while (pdata[j] < key && j < k);
 
 		
 		if (j < k)
@@ -93,6 +95,13 @@ static int partion(int iStart, int iEnd, int *pdata)
 			pdata[k] = tmp;
 		}	
 	}
+
+	for (i = 0; i<=(9); i++)
+	{
+		printf("%d ", pdata[i]);
+	}
+	printf("\n====================================\n");
+
 	
 	return k;
 }
