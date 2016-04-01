@@ -13,7 +13,7 @@
 #include <time.h>
 #include "sort.h"
 
-#define RANDOM_RANGE_MAX (1000)
+#define RANDOM_RANGE_MAX (10000)
 
 
 static int show_result(int iRange, int *pdata)

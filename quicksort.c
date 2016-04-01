@@ -61,14 +61,14 @@ static int partion(int iStart, int iEnd, int *pdata)
 		keyIdx = iStart;
 		key = pdata[iStart];
 	}
-	printf("\n\n===== start: %d   end:%d  key:%d keyIdx:%d\n",iStart,iEnd,key,keyIdx);
-
+//	printf("\n\n===== start: %d   end:%d  key:%d keyIdx:%d\n",iStart,iEnd,key,keyIdx);
+#if 0
 	for (i = 0; i<=(9); i++)
 	{
 		printf("%d ", pdata[i]);
 	}
 	printf("\n");
-	
+#endif	
 	j--;
 	k++;
 
@@ -76,17 +76,16 @@ static int partion(int iStart, int iEnd, int *pdata)
 	while (j < k)
 	{
 		/*这里的顺序很重要，如果是递归先排列左半边的话，这里必须要先右边哨兵开始*/
+		/*从哪边开始，主要是最后停在的数是较大的还是较小的，最终把较大或较小的归到哪边继续排的问题*/
 		do
 		{
 			k--;
 		}while (pdata[k] > key && k > j);
 
-
 		do
 		{
 			j++;
 		}while (pdata[j] < key && j < k);
-
 		
 		if (j < k)
 		{
@@ -96,12 +95,13 @@ static int partion(int iStart, int iEnd, int *pdata)
 		}	
 	}
 
+#if 0
 	for (i = 0; i<=(9); i++)
 	{
 		printf("%d ", pdata[i]);
 	}
-	printf("\n====================================\n");
-
+//	printf("\n====================================\n");
+#endif
 	
 	return k;
 }
