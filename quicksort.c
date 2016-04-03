@@ -3,7 +3,7 @@
 * highlight:
 * 		基准值采用了中位法获取	 
 * zj 20160326 add
-*
+* 
 */
 
 #include <stdio.h>
