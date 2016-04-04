@@ -7,8 +7,12 @@
 #ifndef _SORT_H_
 #define _SORT_H_
 
-int issort(int iRange, int *pdata);
+
+#define SORT_FUNC_NUMS (3)
+
+int issort(int iStart, int iEnd, int *pdata);
 int quicksort(int iStart, int iEnd, int *pdata);
+int mergesort(int iStart, int iEnd, int* pdata);
 
 #endif
 

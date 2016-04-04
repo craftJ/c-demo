@@ -11,10 +11,11 @@
 #include <string.h>
 
 
-int issort(int iRange, int *pdata)
+int issort(int iStart, int iEnd, int *pdata)
 {
 	int i = 0,j = 1;
 	int key = 0;	
+	int iRange = iEnd - iStart +1;
 
 	for (i = 0; i < iRange; i++)
 	{
@@ -39,9 +40,6 @@ int issort(int iRange, int *pdata)
 
 	return 0;
 }
-
-
-
 
 
 
