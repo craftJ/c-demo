@@ -7,10 +7,6 @@
 *
 */
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <time.h>
 #include "sort.h"
 
 #define RANDOM_RANGE_MAX (10000)
@@ -37,6 +33,9 @@ SORT_FUNCS g_struFuncs[SORT_FUNC_NUMS] =
 	{
 		"merge sort", mergesort
 	},
+	{
+		"count sort", countsort
+	}
 };
 
 
