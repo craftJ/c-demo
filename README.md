@@ -1,5 +1,4 @@
-# c_fun here are some funny c programs
-
+# c demo here are some demo programs written with C
 
 some short C clip programs
 
